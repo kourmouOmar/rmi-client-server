@@ -15,15 +15,14 @@ public class RemImpl extends UnicastRemoteObject implements Rem {
   }
 
   public String getMessage() throws RemoteException {
-    
 	  return("Here is a remote message.");
   }
 
-@Override
-public int addition(int x, int b) throws RemoteException {
-	// TODO Auto-generated method stub
-	return (x+b);
-}
+  @Override
+  public int addition(int x, int b) throws RemoteException {
+    // TODO Auto-generated method stub
+    return (x+b);
+  }
   
   
 }

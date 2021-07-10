@@ -2,10 +2,6 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.net.*;
 
-// Taken from Core Web Programming from Prentice Hall and
-// Sun Microsystems Press, and may be freely used or adapted.
-// Copyright 2000, http://www.corewebprogramming.com/
-
 /**
  * The server creates a RemImpl (which implements the Rem interface), then
  * registers it with the URL Rem, where clients can access it.
@@ -20,6 +16,8 @@ public class RemServer {
 				LocateRegistry.createRegistry(Integer.parseInt(port));
 				RemImpl localObject = new RemImpl();
 				Naming.rebind("rmi://localhost:" + port + "/Rem", localObject);
+				System.out.println("Server connected :) ");
+
 				
 		} catch (RemoteException re) {
 			System.out.println("RemoteException: " + re);
